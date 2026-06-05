@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-06-04 18:28:22",
+  "total_casos": 5,
+  "resultados": [
+    {
+      "input": "Mi motor DC no gira cuando le aplico voltaje",
+      "metricas": {
+        "AnswerRelevancyMetric": {
+          "error": "1 validation error for AnswerRelevancyVerdict\nverdict\n  Field required [type=missing, input_value={'reason': 'El código Ar... modificado y mejorado'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing"
+        },
+        "FaithfulnessMetric": {
+          "score": 0.455,
+          "reason": "The score is 0.45 because there are significant contradictions between the `actual output` and the 'retrieval context'. The code uses functions to control a motor DC with PWM (contradicts stating `analogWrite()` must be used), the project Controlling_motor_speed uses Arduino for interfacing, and the claim about setting pin `en1` does not align with the retrieval context's mention of using PWM. Additionally, there are errors in the code that impede its execution, which contradicts the description of Controlling_motor_speed.",
+          "passed": false
+        },
+        "ContextualPrecisionMetric": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the relevant nodes ('Mi motor DC no gira cuando le aplico voltaje' and 'The text verifies that the problem is indeed with the motor's rotation when voltage is applied.') are ranked higher than the irrelevant node ('The context of motor control and Arduino projects') in the retrieval contexts, which do not contribute to addressing the input query.",
+          "passed": true
+        },
+        "ContextualRecallMetric": {
+          "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+        }
+      }
+    },
+    {
+      "input": "El sensor ultrasónico HC-SR04 siempre me devuelve la misma distancia",
+      "metricas": {
+        "AnswerRelevancyMetric": {
+          "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+        },
+        "FaithfulnessMetric": {
+          "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+        },
+        "ContextualPrecisionMetric": {
+          "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+        },
+        "ContextualRecallMetric": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because all sentences in the expected output are attributed to nodes in the retrieval context, ensuring a comprehensive and accurate recall of tasks to be performed.",
+          "passed": true
+        }
+      }
+    },
+    {
+      "input": "Mi servo motor vibra y no se posiciona correctamente",
+      "metricas": {
+        "AnswerRelevancyMetric": {
+          "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+        },
+        "FaithfulnessMetric": {
+          "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+        },
+        "ContextualPrecisionMetric": {
+          "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+        },
+        "ContextualRecallMetric": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the sentences in the Expected Output are well-justified by the relevant information from the nodes in retrieval context, specifically related to servo control and motor speed.",
+          "passed": true
+        }
+      }
+    },
+    {
+      "input": "El sensor IR no detecta obstáculos correctamente",
+      "metricas": {
+        "AnswerRelevancyMetric": {
+          "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+        },
+        "FaithfulnessMetric": {
+          "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+        },
+        "ContextualPrecisionMetric": {
+          "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+        },
+        "ContextualRecallMetric": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because all sentences are related to settings or checks that can be done on both IR and ultra-sonic sensor setups, indicating a strong contextual recall with 2 nodes in the retrieval context (IR sensor and ultra-sonic sensor) being relevant.",
+          "passed": true
+        }
+      }
+    },
+    {
+      "input": "Mi Arduino no sube el código y muestra error de puerto COM",
+      "metricas": {
+        "AnswerRelevancyMetric": {
+          "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+        },
+        "FaithfulnessMetric": {
+          "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+        },
+        "ContextualPrecisionMetric": {
+          "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+        },
+        "ContextualRecallMetric": {
+          "score": 0.0,
+          "reason": "The score is 0.00 because there are no sentences in the expected output that can be attributed to nodes in retrieval context, and the presence of generic keywords like 'yes' and 'no' indicates that the retrieval context may not have any relevant information to provide.",
+          "passed": false
+        }
+      }
+    }
+  ],
+  "promedio_FaithfulnessMetric": 0.455,
+  "promedio_ContextualPrecisionMetric": 1.0,
+  "promedio_ContextualRecallMetric": 0.75
+}
